@@ -26,7 +26,7 @@ DbController: Class yang memiliki method-method logic pengontrol operasi
 CRUD dari koneksi database sebelumnya di DbConnect menuju layouts.
 Sederhananya, inilah class yang berperan sebagai penghubung.
 
-## 3.layouts
+## 3. layouts
 
 Di dalam package/folder layouts, terdapat lagi package/folder components
 dan 1 class di luar package/folder components yaitu class Menu.
