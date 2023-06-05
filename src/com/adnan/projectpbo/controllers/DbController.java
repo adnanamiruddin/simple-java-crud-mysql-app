@@ -29,6 +29,23 @@ public class DbController extends DbConnect {
         }
     }
 
+    public static List<Produk> getAllProduk() {
+        List<Produk> produks = new ArrayList<>();
+        connection();
+        query = "SELECT * FROM tb_produk";
+        try {
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                produks.add(new Produk(resultSet.getInt("id"), resultSet.getString("nama"), resultSet.getLong("harga"), resultSet.getInt("stok")));
+            }
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produks;
+    }
+
     public static Produk getProdukByNama(String nama) {
         Produk produk = null;
         connection();
