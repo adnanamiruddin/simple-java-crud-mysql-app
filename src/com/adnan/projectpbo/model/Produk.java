@@ -1,4 +1,4 @@
-package com.adnan.projectpbo.models;
+package com.adnan.projectpbo.model;
 
 public class Produk {
     private int id;

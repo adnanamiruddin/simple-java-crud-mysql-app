@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.adnan.projectpbo.controllers.DbController;
 import com.adnan.projectpbo.layouts.Menu;
-import com.adnan.projectpbo.models.Produk;
+import com.adnan.projectpbo.model.Produk;
 
 public class EditData {
     public static void showEditData(String nama) {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.adnan.projectpbo.config.DbConnect;
-import com.adnan.projectpbo.models.Produk;
+import com.adnan.projectpbo.model.Produk;
 
 public class DbController extends DbConnect {
 

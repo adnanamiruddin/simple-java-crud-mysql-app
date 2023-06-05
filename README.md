@@ -1,18 +1,61 @@
-## Getting Started
+# App.java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Di dalam file (class) 'App.java' terdapat object main method yang isinya
+Menu.showMenu() yang memanggil method static dari class Menu.
 
-## Folder Structure
+Menu.showMenu();
+Akan print menu/list yang isinya Read Data, Insert Data, Edit Data,
+Delete Data, maupun Exit dari program yang looping.
 
-The workspace contains two folders by default, where:
+# com/adnan/projectpbo
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Terdapat beberapa package/folder, yaitu:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+1. config
+2. controllers
+3. layouts
+4. models
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 1. config
 
-## Dependency Management
+DbConnect: Class untuk menghubungkan Java dengan MySQL (phpmyadmin)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 2. controllers
+
+DbController: Class yang memiliki method-method logic pengontrol operasi
+CRUD dari koneksi database sebelumnya di DbConnect menuju layouts.
+Sederhananya, inilah class yang berperan sebagai penghubung.
+
+## 3.layouts
+
+Di dalam package/folder layouts, terdapat lagi package/folder components
+dan 1 class di luar package/folder components yaitu class Menu.
+
+### 3.1. components
+
+1. DeleteData: Class untuk menampilkan print output menu hapus data
+   yang ada di database dari class Menu.
+2. EditData: Class yang berisikan menu lagi, yaitu:
+   a. Edit nama produk
+   b. Edit harga produk
+   c. Edit stok produk
+   yang berfungsi untuk meng-update/mengubah data yang ada di database.
+3. InsertData: Class yang berfungsi untuk menginput data produk baru
+   dan memasukkannya ke database.
+4. ReadData: Class yang berperan untuk menampilkan semua produk yang
+   ada di database.
+
+### 3.2. Menu
+
+Menu: Class ini berada di luar package/folder components. Class ini akan
+menampilkan menu secara keseluruhan dan memanggil method-method static
+dari class components seusai dengan request input dari user.
+
+## 4. models
+
+Produk: Sesuai package/foldernya, class ini berperan sebagai model untuk Java
+yang mana atribut-atributnya menggambarkan kolom-kolom tb_produk yang ada
+di database.
+-> Salah satu peran dari model ini adalah pada method
+getProdukByNama(String nama) yang ada pada class DbController,
+di mana method tersebut akan me-return model Produk ini.
