@@ -26,7 +26,7 @@ DbController: Class yang memiliki method-method logic pengontrol operasi
 CRUD dari koneksi database sebelumnya di DbConnect menuju layouts.
 Sederhananya, inilah class yang berperan sebagai penghubung.
 
-## 3.layouts
+## 3. layouts
 
 Di dalam package/folder layouts, terdapat lagi package/folder components
 dan 1 class di luar package/folder components yaitu class Menu.
@@ -55,7 +55,6 @@ dari class components seusai dengan request input dari user.
 
 Produk: Sesuai package/foldernya, class ini berperan sebagai model untuk Java
 yang mana atribut-atributnya menggambarkan kolom-kolom tb_produk yang ada
-di database.
--> Salah satu peran dari model ini adalah pada method
+di database. Salah satu peran dari model ini adalah pada method
 getProdukByNama(String nama) yang ada pada class DbController,
 di mana method tersebut akan me-return model Produk ini.
