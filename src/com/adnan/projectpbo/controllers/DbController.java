@@ -1,13 +1,15 @@
 package com.adnan.projectpbo.controllers;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.adnan.projectpbo.config.DbConnect;
 import com.adnan.projectpbo.models.Produk;
 
 public class DbController extends DbConnect {
 
-    public static void getDatabase() {
+    public static void printDataProduk() {
         connection();
         try {
             // query = "SELECT nama, harga, stok FROM tb_produk ORDER BY ID DESC";

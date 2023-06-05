@@ -2,6 +2,11 @@ package com.adnan.projectpbo.layouts;
 
 import java.util.Scanner;
 
+import com.adnan.projectpbo.layouts.components.DeleteData;
+import com.adnan.projectpbo.layouts.components.EditData;
+import com.adnan.projectpbo.layouts.components.InsertData;
+import com.adnan.projectpbo.layouts.components.ReadData;
+
 public class Menu {
     public static void showMenu() {
         System.out.println();

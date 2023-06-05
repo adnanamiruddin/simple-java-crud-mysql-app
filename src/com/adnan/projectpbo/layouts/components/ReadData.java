@@ -1,8 +1,9 @@
-package com.adnan.projectpbo.layouts;
+package com.adnan.projectpbo.layouts.components;
 
 import java.util.Scanner;
 
 import com.adnan.projectpbo.controllers.DbController;
+import com.adnan.projectpbo.layouts.Menu;
 
 public class ReadData {
     public static void showReadData() {
@@ -11,7 +12,7 @@ public class ReadData {
         System.out.println("================================");
         System.out.println("Data Produk");
         System.out.println("================================");
-        DbController.getDatabase();
+        DbController.printDataProduk();
         System.out.println("================================");
 
         System.out.println("1. Menu");

@@ -1,8 +1,9 @@
-package com.adnan.projectpbo.layouts;
+package com.adnan.projectpbo.layouts.components;
 
 import java.util.Scanner;
 
 import com.adnan.projectpbo.controllers.DbController;
+import com.adnan.projectpbo.layouts.Menu;
 
 public class DeleteData {
     public static void showDeleteData() {
@@ -11,7 +12,7 @@ public class DeleteData {
         System.out.println("================================");
         System.out.println("Silahkan Pilih Data yang Ingin Dihapus");
         System.out.println("--------------------------------");
-        DbController.getDatabase();
+        DbController.printDataProduk();
         System.out.println("--------------------------------");
         System.out.println("**Note: Input nama produk dengan benar!!!");
         System.out.print("Pilih Nama Produk: ");

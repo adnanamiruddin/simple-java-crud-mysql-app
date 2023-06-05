@@ -1,8 +1,9 @@
-package com.adnan.projectpbo.layouts;
+package com.adnan.projectpbo.layouts.components;
 
 import java.util.Scanner;
 
 import com.adnan.projectpbo.controllers.DbController;
+import com.adnan.projectpbo.layouts.Menu;
 
 public class InsertData {
     public static void showInsertData() {
