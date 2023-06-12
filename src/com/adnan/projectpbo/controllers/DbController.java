@@ -12,15 +12,15 @@ public class DbController extends DbConnect {
     public static void printDataProduk() {
         connection();
         try {
-            // query = "SELECT nama, harga, stok FROM tb_produk ORDER BY ID DESC";
-            query = "SELECT nama, harga, stok FROM tb_produk";
+            // query = "SELECT nama, harga, jumlah FROM tb_produk ORDER BY ID DESC";
+            query = "SELECT nama, harga, jumlah FROM tb_produk";
 
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()) {
                 System.out.println(
-                    String.format("%s - Rp.%d - Stok %d", resultSet.getString("nama"), resultSet.getInt("harga"), resultSet.getInt("stok"))
+                    String.format("%s - Rp.%d - Stok %d", resultSet.getString("nama"), resultSet.getInt("harga"), resultSet.getInt("jumlah"))
                 );
             }
             preparedStatement.close();
@@ -37,7 +37,7 @@ public class DbController extends DbConnect {
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                produks.add(new Produk(resultSet.getInt("id"), resultSet.getString("nama"), resultSet.getLong("harga"), resultSet.getInt("stok")));
+                produks.add(new Produk(resultSet.getInt("id"), resultSet.getString("nama"), resultSet.getLong("harga"), resultSet.getInt("jumlah")));
             }
             preparedStatement.close();
         } catch (SQLException e) {
@@ -55,7 +55,7 @@ public class DbController extends DbConnect {
             preparedStatement.setString(1, nama);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                produk = new Produk(resultSet.getInt("id"), resultSet.getString("nama"), resultSet.getLong("harga"), resultSet.getInt("stok"));
+                produk = new Produk(resultSet.getInt("id"), resultSet.getString("nama"), resultSet.getLong("harga"), resultSet.getInt("jumlah"));
             }
             preparedStatement.close();
         } catch (SQLException e) {
@@ -64,14 +64,14 @@ public class DbController extends DbConnect {
         return produk;
     }
 
-    public static boolean insertData(String nama, long harga, int stok) {
+    public static boolean insertData(String nama, long harga, int jumlah) {
         connection();
-        query = "INSERT INTO tb_produk (nama, harga, stok) VALUES (?, ?, ?)";
+        query = "INSERT INTO tb_produk (nama, harga, jumlah) VALUES (?, ?, ?)";
         try {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, nama);
             preparedStatement.setLong(2, harga);
-            preparedStatement.setInt(3, stok);
+            preparedStatement.setInt(3, jumlah);
             preparedStatement.executeUpdate();
             preparedStatement.close();
             return true;
@@ -109,12 +109,12 @@ public class DbController extends DbConnect {
         }
     }
 
-    public static void updateStok(int id, int stok) {
+    public static void updateJumlah(int id, int jumlah) {
         connection();
-        query = "UPDATE tb_produk SET stok=? WHERE id=?";
+        query = "UPDATE tb_produk SET jumlah=? WHERE id=?";
         try {
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, stok);
+            preparedStatement.setInt(1, jumlah);
             preparedStatement.setInt(2, id);
             preparedStatement.executeUpdate();
             preparedStatement.close();

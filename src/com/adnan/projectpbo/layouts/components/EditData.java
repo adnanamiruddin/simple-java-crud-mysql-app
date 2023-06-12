@@ -24,7 +24,7 @@ public class EditData {
         System.out.println("================================");
         System.out.println("1. Update Nama");
         System.out.println("2. Update Harga");
-        System.out.println("3. Update Stok");
+        System.out.println("3. Update Jumlah");
         System.out.println("4. Back to Menu");
 
         System.out.println("================================");
@@ -39,7 +39,7 @@ public class EditData {
                     showEditHarga(nama);
                     break;
                 case 3:
-                    showEditStok(nama);
+                    showEditJumlah(nama);
                     break;
                 case 4:
                     Menu.showMenu();
@@ -101,21 +101,21 @@ public class EditData {
         sc.close();
     }
 
-    public static void showEditStok(String nama) {
+    public static void showEditJumlah(String nama) {
         Scanner sc = new Scanner(System.in);
         Produk produk = DbController.getProdukByNama(nama);
 
         System.out.println("================================");
         System.out.println("Edit Nama");
         System.out.println("================================");
-        System.out.println("Stok Awal: " + produk.getStok());
+        System.out.println("Jumlah Awal: " + produk.getJumlah());
         System.out.println("--------------------------------");
-        System.out.print("Stok Baru: ");
-        int stokBaru = sc.nextInt();
-        DbController.updateStok(produk.getId(), stokBaru);
+        System.out.print("Jumlah Baru: ");
+        int jumlahBaru = sc.nextInt();
+        DbController.updateJumlah(produk.getId(), jumlahBaru);
 
         System.out.println("================================");
-        System.out.println("Berhasil Update Data Stok");
+        System.out.println("Berhasil Update Data Jumlah");
         System.out.println("--------------------------------");
         Menu.showMenu();
         sc.close();
